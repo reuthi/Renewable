@@ -26,7 +26,7 @@
         90.38771057,
         4,
         '<i class="la la-home"></i>'],
-        [o("24_Property_Single.html", "assets/images/listing/5.jpg", "Airport", "1512 Duncan Avenue, New York"),
+        [o("24_Property_Single.html", "assets/images/listing/5.jpg", "Airport", "gz2 Duncan Avenue, New York"),
         23.36179824,
         90.17234802,
         5,
@@ -58,17 +58,17 @@
              property.coordinate1,
              property.coordinate2,
              index+1,
-             '<i class="la la-home"></i>'
+             '<i class=""></i>'
              ]
          })
         if(void 0!==i&&!1!==i)var n=parseInt(i);
         else n=10;
-        n=2
+        n=3
         if(void 0!==a&&!1!==a)var r=parseInt(a);
         else r=!1;
         // console.log(n)
         var m=new google.maps.Map(document.getElementById("map"), {
-            zoom:n, scrollwheel:r, center:new google.maps.LatLng(23.728661581133366, 90.43003517390389), mapTypeId:google.maps.MapTypeId.ROADMAP, zoomControl:!1, mapTypeControl:!1, scaleControl:!1, panControl:!1, navigationControl:!1, streetViewControl:!1, gestureHandling:"cooperative", styles:[ {
+            zoom:n, scrollwheel:r, center:new google.maps.LatLng(15.9456,  6.6966), mapTypeId:google.maps.MapTypeId.ROADMAP, zoomControl:!1, mapTypeControl:!1, scaleControl:!1, panControl:!1, navigationControl:!1, streetViewControl:!1, gestureHandling:"cooperative", styles:[ {
                 featureType:"water", elementType:"geometry", stylers:[ {
                     color: "#e9e9e9"
                 }

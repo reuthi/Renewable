@@ -186,14 +186,14 @@ $(window).on("load", function () {
 
     const div = document.createElement('div');
     div.className = 'row'
-    properties.slice(0, 3).forEach(property => {
+    properties.slice(0, 3).forEach((property, index) => {
         div.innerHTML +=
             `<div class="col-lg-4 col-md-6">
         <div class="card">
 <a href="" title="">
     <div class="img-block">
         <div class="overlay"></div>
-        <img src="${property.Picture}" alt="" class="img-fluid">
+        <img src="assets/properties/${index+1}.jpg" alt="" class="img-fluid">
         <div class="rate-info">
             <h5>${property.SalesPrice}</h5>
             <span>${property.AssetStatus}</span>
