@@ -203,7 +203,7 @@ $(window).on("load", function () {
 <div class="card-body">
     <a href="" title="">
         <h3>${property.Name}</h3>
-        <p> <i class="la la-map-marker"></i>${property.location}</p>
+        <p> <i class="la la-map-marker"></i>${property.Country}</p>
     </a>
     <ul>
         <li>${property.MW} MV</li>
