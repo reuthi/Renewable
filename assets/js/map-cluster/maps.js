@@ -2,9 +2,9 @@
     "use strict";
     function t() {
         console.log(properties)
-        var t=new InfoBox;
+        // var t=new InfoBox;
         function o(e, t, o, l, i, s) {
-            return'<a href="'+e+'" class="listing-img-container"><div class="infoBox-close"><i class="fa fa-times"></i></div><img src="'+t+'" alt=""><div class="rate-info"> <h5>$550.000</h5> <span>For Rent</span> </div><div class="listing-item-content"><h3>'+o+"</h3><span><i class='la la-map-marker'></i>"+l+"</span></div></a>"
+            return'<a href="'+e+'" class="listing-img-container"><div><i class="fa fa-times"></i></div><img src="" alt=""><div class="rate-info"> <h5>$550.000</h5> <span>For Rent</span> </div><div class="listing-item-content"><h3>'+o+"</h3><span><i class='la la-map-marker'></i>"+l+"</span></div></a>"
         }
         var l=[[o("24_Property_Single.html", "assets/images/listing/1.jpg", "Grameen Sweets", "964 School Street, New York"),
         23.72447089779572,
@@ -54,7 +54,7 @@
         i=e("#map").attr("data-map-zoom"),
         a=e("#map").attr("data-map-scroll");
         l = properties.map((property, index) => {
-             return [o("24_Property_Single.html", `assets/images/listing/${index+1}.jpg`, "", `${property.Country}`),
+             return [o("24_Property_Single.html", `assets/images/listing/${ +1}.jpg`, "", `${property.Country}`),
              property.coordinate1,
              property.coordinate2,
              index+1,
@@ -210,7 +210,7 @@
             if(void 0!==e(this).data("marker-id")) {
                 var t=e(this).data("marker-id")-1, o=f[t].div;
                 e(o).addClass("clicked"), e(this).on("mouseout", function() {
-                    e(o).is(":not(.infoBox-opened)")&&e(o).removeClass("clicked")
+                    // e(o).is(":not(.infoBox-opened)")&&e(o).removeClass("clicked")
                 }
                 )
             }

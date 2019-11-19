@@ -206,7 +206,7 @@ $(window).on("load", function () {
         <p> <i class="la la-map-marker"></i>${property.Country}</p>
     </a>
     <ul>
-        <li>${property.MW} MV</li>
+        <li>${property.MW} MW</li>
         <li>${property.PropertyType}</li>
         <li>${property.Percent}</li>
     </ul>
