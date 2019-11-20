@@ -44,11 +44,23 @@ $(window).on("load", function () {
         $("#register-popup").removeClass("active");
         $(".wrapper").addClass("overlay-bgg");
     });
+    $(".open-contact-popup").on("click", function () {
+        $("#contact-popup").toggleClass("active");
+    
+        $("#register-popup").removeClass("active");        $("#sign-popup").removeClass("active");
+
+        $(".wrapper").addClass("overlay-bgg");
+    });
     $("html").on("click", function () {
         $("#sign-popup").removeClass("active");
+        $("#contact-popup").removeClass("active");
+
         $(".wrapper").removeClass("overlay-bgg");
     });
     $(".signin-op, .popup").on("click", function (e) {
+        e.stopPropagation();
+    });
+    $(".open-contact-popup, .popup").on("click", function (e) {
         e.stopPropagation();
     });
 
@@ -199,7 +211,7 @@ function loadProperties(length) {
         div.innerHTML +=
             `<div class="c">
         <div class="card">
-<a href="" title="">
+<div class="open-contact-popup">
     <div class="img-block">
         <div class="overlay"></div>
         <img src="assets/properties/${index+1}.jpg" alt="" class="img-fluid">
@@ -208,7 +220,7 @@ function loadProperties(length) {
             <span>${property.AssetStatus}</span>
         </div>
     </div>
-</a>
+</div>
 <div class="card-body">
     <a href="" title="">
         <h3>${property.Name}</h3>

@@ -5265,7 +5265,7 @@ header.fix {
 
 .wrapper:before {
   content: '';
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -5300,13 +5300,18 @@ header.fix {
 }
 
 #sign-popup.active.popup,
-#register-popup.active.popup {
+#register-popup.active.popup,
+#contact-popup.active.popup {
   opacity: 1;
   z-index: 99999;
   visibility: visible;
   margin: 0;
 }
 
+div#contact-popup {
+  padding: 2%;
+  /* font-size: 25px; */
+}
 .popup>h3 {
   color: #242526;
   font-size: 18px;
