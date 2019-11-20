@@ -6685,3 +6685,9 @@ label.error {
   color: black;
   font-weight: bolder;
 }
+
+.partners-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
