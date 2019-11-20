@@ -184,11 +184,20 @@ $(window).on("load", function () {
                       POPULAR LISTING HOME PAGE
     ===============================================*/
 
+
+
+});
+
+function loadProperties(length) {
+
     const div = document.createElement('div');
-    div.className = 'row'
-    properties.slice(0, 3).forEach((property, index) => {
+    div.className = 'd-flex flex-wrap'
+    const end = length ? length : properties.length
+    // console.log(window.location.href);
+    
+    properties.slice(0, end).forEach((property, index) => {
         div.innerHTML +=
-            `<div class="col-lg-4 col-md-6">
+            `<div class="c">
         <div class="card">
 <a href="" title="">
     <div class="img-block">
@@ -221,6 +230,8 @@ $(window).on("load", function () {
     })
     const container = document.getElementsByClassName('listing-row')[0];
     if (container) {
+        console.log(container)
+
         container.appendChild(div)
     }
-});
+}

@@ -4346,6 +4346,11 @@ select::-ms-expand {
   border: 0;
 }
 
+.c {
+  padding: 1% 2%;
+  flex-basis: 30%
+}
+
 
 /* ==================== half-map-sec ================ */
 
