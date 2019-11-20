@@ -194,7 +194,7 @@ function loadProperties(length) {
     div.className = 'd-flex flex-wrap'
     const end = length ? length : properties.length
     // console.log(window.location.href);
-    
+
     properties.slice(0, end).forEach((property, index) => {
         div.innerHTML +=
             `<div class="c">
@@ -234,4 +234,25 @@ function loadProperties(length) {
 
         container.appendChild(div)
     }
+}
+
+function displayTerms() {
+    const select = document.getElementsByClassName('select-country')[0]
+    // console.log(select)
+    const country = select.options[select.selectedIndex].value;
+    // console.log(country)
+    const termsDiv = document.getElementsByClassName('terms')[0]
+    console.log(termsDiv)
+    termsDiv.textContent = accrediatiaionTerms.filter(term => {
+        // console.log(term.Country, country)
+        return term.Country === country
+    }).map(term => {
+        console.log(term)
+        return term.Text
+    })[0]
+}
+
+function register() {
+ const data = new FormData(document.querySelector('form'))
+console.log(data)
 }
