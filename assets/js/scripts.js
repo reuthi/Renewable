@@ -203,13 +203,13 @@ $(window).on("load", function () {
 function loadProperties(length) {
 
     const div = document.createElement('div');
-    div.className = 'd-flex flex-wrap'
+    div.className = 'row'
     const end = length ? length : properties.length
     // console.log(window.location.href);
 
     properties.slice(0, end).forEach((property, index) => {
         div.innerHTML +=
-            `<div class="c">
+            `<div class="col-lg-4 col-md-4 col-sm-6">
         <div class="card">
 <div class="open-contact-popup">
     <div class="img-block">
