@@ -312,7 +312,8 @@ function register() {
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
             const jwt = JSON.parse(xmlHttp.response).jwt
             saveToLocalStorage(localStorageKey.jwt, jwt);
-            saveToLocalStorage(localStorageKey.usaername, $("input[name='username']")[1].value);
+            console.log($("input[name='username']"))
+            saveToLocalStorage(localStorageKey.usaername, $("input[name='username']")[0].value);
             $("#thankyou-popup").toggleClass("active");
             $("#register-popup").removeClass("active");
             $("#sign-popup").removeClass("active");
