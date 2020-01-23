@@ -1,4 +1,4 @@
-const properties = [
+let properties = [
     
         {
           "Name": "Hungarian Utility",

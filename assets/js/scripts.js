@@ -1,6 +1,35 @@
-$(window).on("load", function () {
+let USERNAME = null
+
+let localStorageKey = {
+    jwt: "renewableJwt",
+    usaername: "renewableUsername"
+}
+function isUserConnected() {
+    if (localStorage.getItem(localStorageKey.jwt)) {
+        USERNAME = localStorage.getItem(localStorageKey.usaername)
+        $(".signin-btn").hide()
+        $( ".username-info").append( `
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <span><b class="">Hello, ${USERNAME}</b></span>
+                </a>
+            </li>
+        `);
+    } 
+}
+isUserConnected()
+
+
+
+
+$(window).on("load", async function () {
     "use strict";
 
+    await fetchComponent('header')
+    await fetchComponent('footer')
+    await fetchComponent('popups')
+
+    isUserConnected()
 
 
     $(".features-dv form ul li input:checkbox").on("click", function () {
@@ -38,26 +67,24 @@ $(window).on("load", function () {
     /*==============================================
                       POPUP FUNCTIONS
     ===============================================*/
-
-    $(".signin-op").on("click", function () {
+    $(".signin-op, .signin-open").on("click", function () {
         $("#sign-popup").toggleClass("active");
         $("#register-popup").removeClass("active");
         $(".wrapper").addClass("overlay-bgg");
     });
     $(".open-contact-popup").on("click", function () {
         $("#contact-popup").toggleClass("active");
-    
-        $("#register-popup").removeClass("active");        $("#sign-popup").removeClass("active");
-
+        $("#register-popup").removeClass("active");
+        $("#sign-popup").removeClass("active");
         $(".wrapper").addClass("overlay-bgg");
     });
     $("html").on("click", function () {
         $("#sign-popup").removeClass("active");
         $("#contact-popup").removeClass("active");
-
+        $("#thankyou-popup").removeClass("active");
         $(".wrapper").removeClass("overlay-bgg");
     });
-    $(".signin-op, .popup").on("click", function (e) {
+    $(".signin-op, .popup, .signin-open").on("click", function (e) {
         e.stopPropagation();
     });
     $(".open-contact-popup, .popup").on("click", function (e) {
@@ -200,8 +227,18 @@ $(window).on("load", function () {
 
 });
 
-function loadProperties(length) {
+async function fetchComponent(compName) {
+    await fetch(`../../${compName}.html`)
+        .then(response => {
+            return response.text()
+        })
+        .then(data => {
+            document.querySelector(compName).innerHTML = data;
+        });
+}
 
+
+function loadProperties(length) {
     const div = document.createElement('div');
     div.className = 'row'
     const end = length ? length : properties.length
@@ -265,6 +302,70 @@ function displayTerms() {
 }
 
 function register() {
- const data = new FormData(document.querySelector('form'))
-console.log(data)
+    console.log('registering', )
+    console.log(document.querySelectorAll('form')[2])
+    const data = new FormData(document.querySelectorAll('form')[2])
+    console.log(...data)
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function () {
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+            const jwt = JSON.parse(xmlHttp.response).jwt
+            saveToLocalStorage(localStorageKey.jwt, jwt);
+            saveToLocalStorage(localStorageKey.usaername, $("input[name='username']")[1].value);
+            $("#thankyou-popup").toggleClass("active");
+            $("#register-popup").removeClass("active");
+            $("#sign-popup").removeClass("active");
+            $(".wrapper").addClass("overlay-bgg");
+        }
+    }
+    xmlHttp.open("post", "http://localhost:1337/auth/local/register");
+    xmlHttp.send(data);
+}
+
+function signIn() {
+    console.log('signing', )
+    console.log(document.querySelectorAll('form')[1])
+    const data = new FormData(document.querySelectorAll('form')[1])
+    console.log(...data)
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function () {
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+            const jwt = JSON.parse(xmlHttp.response).jwt
+            console.log(JSON.parse(xmlHttp.response).user.usaername, JSON.parse(xmlHttp.response).user, JSON.parse(xmlHttp.response))
+            saveToLocalStorage(localStorageKey.jwt, jwt);
+            saveToLocalStorage(localStorageKey.usaername, JSON.parse(xmlHttp.response).user.username);
+            location.reload();
+        }
+    }
+    xmlHttp.open("post", "http://localhost:1337/auth/local");
+    xmlHttp.send(data);
+}
+
+function handleSearchClick() {
+    const country = document.getElementById("country").value;
+    const propertyType = document.getElementsByClassName("selected")[0].innerText;
+    const newProperties = properties.filter(p => {
+        console.log("p:", p, "country", country, "PropertyType", propertyType, )
+        return p.PropertyType === propertyType
+    })
+    console.log("TCL: handleSearchClick -> newProperties", newProperties)
+
+
+
+    // return true
+
+}
+
+function saveToLocalStorage(key, value) {
+    localStorage.setItem(key, value);
+}
+
+
+
+function openSignIn() {
+    console.log("hello", $("#sign-popup"))
+    $("#sign-popup").toggleClass("active");
+    console.log(($("#sign-popup")))
+    $("#register-popup").removeClass("active");
+    $(".wrapper").addClass("overlay-bgg");
 }

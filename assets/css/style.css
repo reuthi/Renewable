@@ -5301,14 +5301,16 @@ header.fix {
 
 #sign-popup.active.popup,
 #register-popup.active.popup,
-#contact-popup.active.popup {
+#contact-popup.active.popup,
+#thankyou-popup.active.popup {
   opacity: 1;
   z-index: 99999;
   visibility: visible;
   margin: 0;
 }
 
-div#contact-popup {
+div#contact-popup,
+div#thankyou-popup {
   padding: 2%;
   /* font-size: 25px; */
 }
