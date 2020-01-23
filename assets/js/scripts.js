@@ -5,6 +5,7 @@ let localStorageKey = {
     usaername: "renewableUsername"
 }
 function isUserConnected() {
+    console.log("isUser")
     if (localStorage.getItem(localStorageKey.jwt)) {
         USERNAME = localStorage.getItem(localStorageKey.usaername)
         $(".signin-btn").hide()
