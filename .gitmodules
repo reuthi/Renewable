@@ -1,0 +1,3 @@
+[submodule "./server"] 
+  path = ./server 
+  url = git://https://github.com/reuthi/Renewable-server/
