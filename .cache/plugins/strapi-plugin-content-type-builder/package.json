@@ -2,7 +2,7 @@
   "_args": [
     [
       "strapi-plugin-content-type-builder@3.0.0-beta.18.5",
-      "/Users/reut/Documents/DEV/Renewable/html/server"
+      "/Users/reut/Documents/DEV/Renewable/html"
     ]
   ],
   "_from": "strapi-plugin-content-type-builder@3.0.0-beta.18.5",
@@ -33,7 +33,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/strapi-plugin-content-type-builder/-/strapi-plugin-content-type-builder-3.0.0-beta.18.5.tgz",
   "_spec": "3.0.0-beta.18.5",
-  "_where": "/Users/reut/Documents/DEV/Renewable/html/server",
+  "_where": "/Users/reut/Documents/DEV/Renewable/html",
   "author": {
     "name": "Strapi team",
     "email": "hi@strapi.io",
