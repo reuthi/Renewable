@@ -1,5 +1,5 @@
 {
-  "host": "localhost",
+  "host": "172-31-33-130",
   "port": 1337,
   "cron": {
     "enabled": false
