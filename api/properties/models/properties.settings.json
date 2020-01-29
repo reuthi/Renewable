@@ -1,0 +1,49 @@
+{
+  "connection": "default",
+  "collectionName": "properties",
+  "info": {
+    "name": "property"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "propertyType": {
+      "type": "enumeration",
+      "enum": [
+        "solar",
+        "wind",
+        "hydro",
+        "bio",
+        "storage",
+        "other"
+      ]
+    },
+    "mw": {
+      "type": "decimal"
+    },
+    "country": {
+      "type": "string"
+    },
+    "percent": {
+      "type": "decimal"
+    },
+    "pictureUrl": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "salesPrice": {
+      "type": "biginteger"
+    },
+    "assetStatus": {
+      "type": "enumeration",
+      "enum": [
+        "operating",
+        "development"
+      ]
+    }
+  }
+}
