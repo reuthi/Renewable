@@ -1,0 +1,22 @@
+{
+  "info": {
+    "name": "post"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "string"
+    },
+    "date": {
+      "type": "datetime"
+    }
+  },
+  "connection": "default",
+  "collectionName": "posts"
+}
