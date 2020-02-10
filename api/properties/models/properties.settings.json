@@ -120,6 +120,15 @@
     },
     "PPADuration": {
       "type": "integer"
+    },
+    "stage": {
+      "type": "enumeration",
+      "enum": [
+        "preNTP",
+        "NTP",
+        "construction",
+        "producing"
+      ]
     }
   }
 }
