@@ -129,6 +129,15 @@
         "construction",
         "producing"
       ]
+    },
+    "PPAinPlace": {
+      "type": "boolean"
+    },
+    "surfaceAgreementInPlace": {
+      "type": "boolean"
+    },
+    "connectionAgreementInPlace": {
+      "type": "boolean"
     }
   }
 }
