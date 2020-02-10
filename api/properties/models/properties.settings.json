@@ -26,7 +26,7 @@
     "country": {
       "type": "string"
     },
-    "percent": {
+    "percentOfDealForSale": {
       "type": "decimal"
     },
     "pictureUrl": {
@@ -44,6 +44,82 @@
         "operating",
         "development"
       ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "region": {
+      "type": "string"
+    },
+    "ConstructionDate": {
+      "type": "datetime"
+    },
+    "ComissioningDate": {
+      "type": "datetime"
+    },
+    "sixMonthRevenue": {
+      "type": "integer"
+    },
+    "typeOfTerrain": {
+      "type": "enumeration",
+      "enum": [
+        "roof",
+        "land",
+        "water"
+      ]
+    },
+    "surfaceOwner": {
+      "type": "string"
+    },
+    "areaCovered": {
+      "type": "string"
+    },
+    "usesOfSurface": {
+      "type": "string"
+    },
+    "assetLeans": {
+      "type": "boolean"
+    },
+    "amountOfSurfaces": {
+      "type": "integer"
+    },
+    "surfaceInclination": {
+      "type": "integer"
+    },
+    "azimuth": {
+      "type": "integer"
+    },
+    "shading": {
+      "type": "enumeration",
+      "enum": [
+        "none",
+        "partial"
+      ]
+    },
+    "surfaceMaterial": {
+      "type": "string"
+    },
+    "surfaceRightsInAgreement": {
+      "type": "string"
+    },
+    "typeOfSale": {
+      "type": "enumeration",
+      "enum": [
+        "SealedBid",
+        "NegotiatedSale"
+      ]
+    },
+    "PPAOfftakerType": {
+      "type": "enumeration",
+      "enum": [
+        "State",
+        "Utility",
+        "Commercial",
+        "GridPrice"
+      ]
+    },
+    "PPADuration": {
+      "type": "integer"
     }
   }
 }
