@@ -10,7 +10,7 @@
   "proxy": {
     "enabled": true,
     "ssl": true,
-    "host": "renewablelistings.com",
+    "host": "34.224.145.233",
     "port": 1337
   }
 }
