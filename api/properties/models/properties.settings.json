@@ -44,7 +44,7 @@
     "region": {
       "type": "string"
     },
-    "constructionDate": {
+    "ConstructionDate": {
       "type": "datetime"
     },
     "ComissioningDate": {

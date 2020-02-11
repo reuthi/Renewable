@@ -1,5 +1,5 @@
 {
-  "host": "34.239.203.248",
+  "host": "https://renewablelisting.com",
   "port": 1337,
   "cron": {
     "enabled": false
