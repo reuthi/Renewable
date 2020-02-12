@@ -1,16 +1,13 @@
 {
-  "host": "localhost",
+  "host": "34.224.145.233",
   "port": 1337,
   "cron": {
     "enabled": false
   },
+  "autoReload": {
+    "enabled": false
+  },
   "admin": {
     "path": "/dashboard"
-  },
-  "proxy": {
-    "enabled": true,
-    "ssl": true,
-    "host": "34.224.145.233",
-    "port": 1337
   }
 }
