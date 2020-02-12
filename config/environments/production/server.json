@@ -1,5 +1,5 @@
 {
-  "host": "localhost",
+  "host": "renewablelisting.com",
   "port": 1337,
   "cron": {
     "enabled": false
