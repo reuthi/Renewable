@@ -1,6 +1,6 @@
 {
-  "host": "renewablelisting.com",
-  "port": 1337,
+  "host": "localhost",
+  "port": "${process.env.PORT || 1337}",
   "cron": {
     "enabled": false
   },
@@ -9,5 +9,11 @@
   },
   "admin": {
     "path": "/dashboard"
+  },
+  "proxy": {
+    "enabled": true,
+    "ssl": true,
+    "host": "renewablelisting.com",
+    "port": 1337
   }
 }
